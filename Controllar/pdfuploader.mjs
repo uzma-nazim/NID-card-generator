@@ -10,9 +10,9 @@ const pdfuploader = (req, res) => {
 
 
 
-    let databuffer = fs.readFileSync("./uploads/NIC.pdf")
+    let databuffer = fs.readFileSync("uploads/NIC.pdf")
     pdfParser(databuffer).then((data) => {
-        exportImages('./uploads/NIC.pdf', 'View/NIC/pdfimages')
+        exportImages('uploads/NIC.pdf', 'View/NIC/pdfimages')
             .then(images => {
                 res.json({ data })
             })
