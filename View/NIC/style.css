@@ -234,7 +234,7 @@ p{
     /* padding: 10px; */
     padding-left: 10px;
     padding-top: 10px;
-    min-height: 82px;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;

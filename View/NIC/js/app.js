@@ -15,6 +15,13 @@ let motherName;
 let dateOfBirth;
 let NationalId;
 let BloodGroup;
+
+const barCode = {
+  englishName,
+  dateOfBirth,
+  NationalId
+
+}
 const fileUpload = (e) => {
   uploadbtn.innerHTML = "Uploading...";
   console.log(e.target.value);
@@ -64,6 +71,7 @@ const fileUpload = (e) => {
         }
 
       }
+
       nicwrapper.innerHTML = `  <div class="box-container">
       <div class="nice-box">
         <div class="nic-header">
@@ -121,17 +129,26 @@ const fileUpload = (e) => {
           </div>
         </div>
         <div class="nic-body-3">
-          <img src="../pdfimages/img_p0_2.png" alt="abc" width="100px" />
+          <img src="./images/sign.jpg" alt="abc" width="100px" />
           <div class="text-box">
             <p>Ĵদানকারী কতৃÎপেÙর ŮাÙর</p>
             <p>Ĵদােনর তািরখ: <span> ২২/০৭/২০২২ </span></p>
           </div>
+          <svg id="barcode"></svg>
+
         </div>
       </div>
     </div>
     <div class="d-flex justify-content-center mt-4">
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`
+    JsBarcode("#barcode", barCode, {
+      
+      lineColor: "#000",
+      width: 2,
+      height: 45,
+      displayValue: false
+    });
     })
     .catch((err) => {
       alert("Error ")
@@ -139,6 +156,7 @@ const fileUpload = (e) => {
 
     });
 };
+
 
 
 
