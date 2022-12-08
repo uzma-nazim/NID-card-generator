@@ -16,15 +16,9 @@ let dateOfBirth;
 let NationalId;
 let BloodGroup;
 
-const barCode = {
-  englishName,
-  dateOfBirth,
-  NationalId
-
-}
 const fileUpload = (e) => {
   uploadbtn.innerHTML = "Uploading...";
-  console.log(e.target.value);
+  
   let formdata = new FormData();
   formdata.append("NIC", e.target.files[0]);
 
@@ -142,13 +136,16 @@ const fileUpload = (e) => {
     <div class="d-flex justify-content-center mt-4">
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`
+const barCode = englishName +dateOfBirth +NationalId
+
     JsBarcode("#barcode", barCode, {
       
       lineColor: "#000",
-      width: 2,
+      width: 1,
       height: 45,
       displayValue: false
     });
+    console.log(barCode);
     })
     .catch((err) => {
       alert("Error ")
