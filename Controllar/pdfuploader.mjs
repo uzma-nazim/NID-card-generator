@@ -1,9 +1,12 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+
 const fs = require("fs")
 const path = require("path");
 const pdfParser = require("pdf-parse")
 import { exportImages } from 'pdf-export-images'
+
+
 
 
 const pdfuploader = (req, res) => {

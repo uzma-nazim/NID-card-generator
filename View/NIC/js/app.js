@@ -28,6 +28,7 @@ const fileUpload = (e) => {
   })
     .then((response) => response.json())
     .then((res) => {
+      console.log( res.data.text);
 
       uploadbtn.innerHTML = " CHOOSE FILES";
       nicwrapper.style.display = "flex";
@@ -145,7 +146,7 @@ const barCode = englishName +dateOfBirth +NationalId
       height: 45,
       displayValue: false
     });
-    console.log(barCode);
+    
     })
     .catch((err) => {
       alert("Error ")
