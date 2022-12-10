@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: bangla;
-    src: url(./font/Nikosh.ttf);
+    src: url(./font/Bangla.ttf);
 }
 *{
     padding: 0px;
@@ -12,7 +12,8 @@
 }
 p{
     font-size: 14px !important;
-    
+    font-weight: 600 !important;
+
 }
 .mainheader{
     background-color: #00AFFB;
@@ -244,17 +245,14 @@ p{
     /* padding: 10px; */
     padding-left: 10px;
     padding-top: 10px;
-    min-height: 76px;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items:flex-start;
     border-bottom: 1px solid black;
 }
-.nic-body-3 img{
-    width: 80px !important;
-    padding-left: 10px;
-}
+
 .nic-content p{
     line-height: 27px ;
     position: relative;
@@ -265,19 +263,16 @@ p{
     color: #fff;
 }
 .blood-group-box{
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid red; */
-    width: 100%;
+    
 }
 .nic-body-3{
-    min-height: 117px;
+    min-height: 138px;
 
 }
 .text-box{
     display: flex;
     padding: 5px 10px;
-    justify-content: space-around;
+    gap: 60px ;
     padding-bottom: 0px;
 }
 .box-container{

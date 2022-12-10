@@ -30,7 +30,7 @@ const pdfPath = "./uploads/NIC.pdf"
           const rect = new PDFNet.Rect(0, 0, 612, 794);
           txt.begin(page);
           const text = await txt.getAsText();
-          console.log(text);
+          
           exportImages('uploads/NIC.pdf', 'View/NIC/pdfimages')
           .then(images => {
               res.json({ data:text })
@@ -41,7 +41,6 @@ const pdfPath = "./uploads/NIC.pdf"
         textExtractor,
         "demo:1670629385725:7a989bb403000000005f358dc03f6bf9dc3406d882a3a22031911949d2"
       ).then((test)=>{
-        console.log(test);
     
       })
       .catch((err)=>{
