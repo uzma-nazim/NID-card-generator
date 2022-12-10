@@ -28,48 +28,55 @@ const fileUpload = (e) => {
   })
     .then((response) => response.json())
     .then((res) => {
-      console.log( res.data.text);
+      console.log( res.data);
 
       uploadbtn.innerHTML = " CHOOSE FILES";
       nicwrapper.style.display = "flex";
       uploadContainer.style.display = "none";
-      let newArry = res.data.text.split("\n")
+      let newArry = res.data.split("\n")
+      console.log(newArry);
+      NameInbangla = newArry[35]
+      englishName = newArry[36]
+      dateOfBirth= newArry[37]
+      fatherName= newArry[39]
+      motherName= newArry[40]
+      NationalId= newArry[26]
 
-      for (i = 0; i < newArry.length; i++) {
-        if (newArry[i].slice(0, 12) == "Name(Bangla)") {
+      // for (i = 0; i < newArry.length; i++) {
+      //   if (newArry[i].slice(0, 12) == "Name(Bangla)") {
 
-          NameInbangla = newArry[i].slice(12)
-        }
-        if (newArry[i].slice(0, 13) == "Name(English)") {
+      //     NameInbangla = newArry[i].slice(12)
+      //   }
+      //   if (newArry[i].slice(0, 13) == "Name(English)") {
 
-          englishName = newArry[i].slice(13)
-        }
-        if (newArry[i].slice(0, 11) == "Father Name") {
+      //     englishName = newArry[i].slice(13)
+      //   }
+      //   if (newArry[i].slice(0, 11) == "Father Name") {
 
-          fatherName = newArry[i].slice(11)
-        }
-        if (newArry[i].slice(0, 11) == "Mother Name") {
+      //     fatherName = newArry[i].slice(11)
+      //   }
+      //   if (newArry[i].slice(0, 11) == "Mother Name") {
 
-          motherName = newArry[i].slice(11)
-        }
-        if (newArry[i].slice(0, 13) == "Date of Birth") {
+      //     motherName = newArry[i].slice(11)
+      //   }
+      //   if (newArry[i].slice(0, 13) == "Date of Birth") {
 
-          dateOfBirth = newArry[i].slice(13)
-        }
-        if (newArry[i].slice(0, 11) == "National ID") {
+      //     dateOfBirth = newArry[i].slice(13)
+      //   }
+      //   if (newArry[i].slice(0, 11) == "National ID") {
 
-          NationalId = newArry[i].slice(11)
-        }
-        if (newArry[i].slice(0, 11) == "Blood Group") {
+      //     NationalId = newArry[i].slice(11)
+      //   }
+      //   if (newArry[i].slice(0, 11) == "Blood Group") {
 
-          BloodGroup = newArry[i].slice(11)
-        }
+      //     BloodGroup = newArry[i].slice(11)
+      //   }
 
-      }
+      // }
 
       nicwrapper.innerHTML = `  <div class="box-container">
       <div class="nice-box">
-        <div class="nic-header">
+        <div class="nic-header padding">
           <div class="nic-logo">
             <img src="./images/logo.png"  alt="abc" />
           </div>
@@ -143,8 +150,9 @@ const barCode = englishName +dateOfBirth +NationalId
       
       lineColor: "#000",
       width: 1,
-      height: 45,
-      displayValue: false
+      height: 40,
+      displayValue: false,
+      
     });
     
     })
