@@ -1,20 +1,24 @@
 
 @font-face {
     font-family: bangla;
-    src: url(./font/Bangla.ttf);
+    src: url(./font/Bokonique-Light.otf);
 }
 *{
     padding: 0px;
     margin: 0px;
-    font-family: bangla ;
+    font-family: bangla;
+    
+    
 
     
 }
 p{
-    font-size: 14px !important;
-    font-weight: 600 !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
 
+    margin-bottom: 0px !important;
 }
+
 .mainheader{
     background-color: #00AFFB;
     display: flex;
@@ -191,12 +195,7 @@ p{
     width: 432px;
 
 }
-p{
-    margin-bottom: 0px !important;
-    font-weight: 600;
-    font-size: 13px;
-    font-weight: 600;
-}
+
 .nic-header{
     display: flex;
     border-bottom: 1px solid black;
@@ -205,8 +204,8 @@ p{
     padding: 5px;
 }
 .green{
-    color: rgb(23, 117, 23);
-    font-weight: 600;
+    color: rgb(53 175 53);
+    font-weight: 300;
 }
 .red{
     color: red;
@@ -266,13 +265,13 @@ p{
     
 }
 .nic-body-3{
-    min-height: 138px;
+    height: 135px;
 
 }
 .text-box{
     display: flex;
     padding: 5px 10px;
-    gap: 60px ;
+    gap: 44px ;
     padding-bottom: 0px;
 }
 .box-container{
