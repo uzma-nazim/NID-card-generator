@@ -14,7 +14,7 @@
 }
 p{
     font-size: 13px !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
 
     margin-bottom: 0px !important;
 }
@@ -93,7 +93,10 @@ p{
 .content p{
     margin-top: 20px;
 }
-
+.box1 p{
+    font-size: 16px !important;
+}
+.nic-body-2 p{margin-top: 5px ;}
 /* -------------------------------------- */
 
 @media only screen and (max-width: 993px){
@@ -183,22 +186,25 @@ p{
 }
 
 .nice-box{
-    border: 1px solid black;
-    width: 417px;
+    border: 1.5px solid black;
+    width: 489px;
     height:max-content ;    
-
+    position: relative;
+    top: 0px ;
+    
+    z-index: 3;
 
 }
 .nic-box2{
     height:max-content ;    
 
-    width: 432px;
+    width: 452px;
 
 }
 
 .nic-header{
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1.5px solid black;
     text-align: center;
 
     padding: 5px;
@@ -211,21 +217,25 @@ p{
     color: red;
 }
 .nic-photo img{
-    width: 100px;
+    margin-left: 5px;
+    width: 113px;
     
 }
+
 .left-spacing{
     margin-left: 10px;
 }
 .bold{
-    font-weight: 700;
+    font-weight: 600;
 }
+
 .nic-body{
     display: flex;
     align-items: flex-start;
     gap: 8px;
     /* border: 1px solid red; */
-    padding: 15px 0px;
+    padding-top: 10px;
+    padding-bottom: 23px;
     position: relative;
 }
 .bg-img{
@@ -238,18 +248,18 @@ p{
     opacity: 0.3;
 }
 .padding{
-    padding: 6px !important;
+    padding: 10px !important;
 }
 .nic-body-2{
-    /* padding: 10px; */
-    padding-left: 10px;
-    padding-top: 10px;
-    min-height: 80px;
+
+    padding-left:11px;
+    
+    height: 94px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items:flex-start;
-    border-bottom: 1px solid black;
+    border-bottom: 1.5px solid black;
 }
 
 .nic-content p{
@@ -265,17 +275,18 @@ p{
     
 }
 .nic-body-3{
-    height: 135px;
+    height: 142px;
 
 }
 .text-box{
     display: flex;
-    padding: 5px 10px;
+    padding: 0px 10px;
     gap: 44px ;
     padding-bottom: 0px;
 }
 .box-container{
-    width: 1000px;
+    width: 1300px;
+    overflow-x: hidden;
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;

@@ -92,7 +92,7 @@ const fileUpload = (e) => {
       }
 
       nicwrapper.innerHTML = `  <div class="box-container">
-      <div class="nice-box">
+      <div class="nice-box box1">
         <div class="nic-header padding">
           <div class="nic-logo">
             <img src="./images/logo.png"  alt="abc" />
@@ -115,8 +115,8 @@ const fileUpload = (e) => {
             <img src="../pdfimages/img_p0_1.png" alt="abc" />
           </div>
           <div class="nic-content">
-            <p>নাম: <span class="left-spacing">${NameInbangla}</span></p>
-            <p>Name: <span class="left-spacing">${englishName}</span></p>
+            <p>নাম: <span class="left-spacing bold">${NameInbangla}</span></p>
+            <p>Name: <span class="left-spacing bold">${englishName}</span></p>
             <p>পিতা : <span class="left-spacing">${fatherName}</span></p>
             <p>মাতা: <span class="left-spacing">${motherName}</span></p>
             <p>
@@ -133,9 +133,9 @@ const fileUpload = (e) => {
         </div>
         <div class="nic-body-2">
           <p>
-  <img  style="margin-left: -6px;" src="./images/house.PNG" alt="">
+  <img   src="./images/house.PNG" alt="">
             
-            <span >${housnumber} ${villageRoad} ${mahula} ${postOffice} ${psotalCode} ${District} ${division}</span>
+            <span >${housnumber}, ${villageRoad}, ${mahula}, ${postOffice}, ${psotalCode}, ${District}, ${division}</span>
           </p>
           <div class="blood-group-box">
             
@@ -146,7 +146,7 @@ const fileUpload = (e) => {
           </div>
         </div>
         <div class="nic-body-3">
-          <img src="./images/sign.jpg" alt="abc" width="93px" />
+          <img style="margin-top: 5px; margin-left: 5px;" src="./images/sign.jpg" alt="abc" width="80px" />
           <div class="text-box">
           <div>
     <img src="./images/donor.PNG"  alt="">
@@ -163,12 +163,13 @@ const fileUpload = (e) => {
     <div class="d-flex justify-content-center mt-4">
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`;
-      const barCode = englishName + dateOfBirth + NationalId;
+      const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" ;
+      console.log(barCode);
       PDF417.init(barCode);
       var barcode = PDF417.getBarcodeArray();
 
       // block sizes (width and height) in pixels
-      var bw = 4;
+      var bw = 3;
       var bh = 1;
 
       // create canvas element based on number of columns and rows in barcode
