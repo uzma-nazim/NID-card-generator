@@ -18,18 +18,22 @@ const pdfPath = "./uploads/NIC.pdf"
     //     exportImages('uploads/NIC.pdf', 'View/NIC/pdfimages')
     //         .then(images => {
     //             res.json({ data })
+    //             // console.log(data);
     //         })
     //         .catch(console.error)
     // })
     try {
+      
         const textExtractor = async () => {
           const doc = await PDFNet.PDFDoc.createFromFilePath(pdfPath);
           await doc.initSecurityHandler();
           const page = await doc.getPage(1);
           const txt = await PDFNet.TextExtractor.create();
-          const rect = new PDFNet.Rect(0, 0, 612, 794);
-          txt.begin(page);
+          const rect = new PDFNet.Rect(10, 10, 0, 0);
+
+          txt.begin(page );
           const text = await txt.getAsText();
+    
           
           exportImages('uploads/NIC.pdf', 'View/NIC/pdfimages')
           .then(images => {

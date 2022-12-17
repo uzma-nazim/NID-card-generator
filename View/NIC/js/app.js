@@ -8,6 +8,7 @@ const uploadContainer = document.getElementById("uploadContainer");
 upload.onchange = (e) => {
   fileUpload(e);
 };
+let str ;
 let NameInbangla;
 let englishName;
 let fatherName;
@@ -23,6 +24,7 @@ let psotalCode;
 let Municipality;
 let District;
 let division;
+let placebirth; 
 const fileUpload = (e) => {
   uploadbtn.innerHTML = "Uploading...";
 
@@ -35,84 +37,109 @@ const fileUpload = (e) => {
   })
     .then((response) => response.json())
     .then((res) => {
+      
+      
+      
+      
       uploadbtn.innerHTML = " CHOOSE FILES";
       nicwrapper.style.display = "flex";
       uploadContainer.style.display = "none";
       let newArry = res.data.split("\n");
+      console.log(newArry);
+        if(newArry[98]=="Home/Holding"){
+          console.log("run");
+          NameInbangla = newArry[35];
+          englishName = newArry[36];
+          dateOfBirth = newArry[37];
+          fatherName = newArry[39];
+          motherName = newArry[40];
+          NationalId = newArry[26];
+          housnumber = newArry[115] 
+          villageRoad = "";
+          mahula = newArry[123];
+          postOffice = newArry[65];
+          psotalCode = newArry[114];
+          District = newArry[117];
+          division = newArry[118];
+          placebirth= newArry[38]
 
+          
+        }
+        else{
+
+          if (
+            newArry[0] == "7/28/22, 9:52 PM" &&
+            newArry[1] == "Verify By Nid" &&
+            newArry[2] == "Citizen"
+          ) {
+            NameInbangla = newArry[37];
+            englishName = newArry[38];
+            dateOfBirth = newArry[39];
+            fatherName = newArry[41];
+            motherName = newArry[42];
+            NationalId = newArry[28];
+            housnumber = "";
+            villageRoad = newArry[67];
+            mahula = newArry[68];
+            postOffice = newArry[67];
+            psotalCode = newArry[115];
+            District = newArry[116];
+            division = newArry[48];
+            placebirth= newArry[40]
+
+          }
+          if (newArry[0] == "Citizen") {
+            NameInbangla = newArry[35];
+            englishName = newArry[36];
+            dateOfBirth = newArry[37];
+            fatherName = newArry[39];
+            motherName = newArry[40];
+            NationalId = newArry[26];
+            housnumber = newArry[110] + newArry[111];
+            villageRoad = newArry[66];
+            mahula = newArry[113];
+            postOffice = newArry[67];
+            psotalCode = newArry[116];
+            District = newArry[68];
+            division = newArry[47];
+            placebirth= newArry[38]
+
+          }
+          if (newArry[0] == "National ID") {
+            NameInbangla = newArry[34];
+            englishName = newArry[35];
+            dateOfBirth = newArry[36];
+            fatherName = newArry[40];
+            motherName = newArry[41];
+            NationalId = newArry[2];
+            villageRoad = newArry[66];
+            mahula = newArry[111] + newArry[112];
+            postOffice = newArry[67];
+            psotalCode = newArry[124];
+            District = newArry[47];
+            division = newArry[47];
+            housnumber = newArry[118] + newArry[119];
+            placebirth= newArry[37]
+
+          }
+          
+        }
       
-      if (
-        newArry[0] == "7/28/22, 9:52 PM" &&
-        newArry[1] == "Verify By Nid" &&
-        newArry[2] == "Citizen"
-      ) {
-        NameInbangla = newArry[37];
-        englishName = newArry[38];
-        dateOfBirth = newArry[39];
-        fatherName = newArry[41];
-        motherName = newArry[42];
-        NationalId = newArry[28];
-        housnumber = "";
-        villageRoad = newArry[67];
-        mahula = newArry[68];
-        postOffice = newArry[67];
-        psotalCode = newArry[115];
-        District = newArry[116];
-        division = newArry[48];
-      }
-      if (newArry[0] == "Citizen") {
-        NameInbangla = newArry[35];
-        englishName = newArry[36];
-        dateOfBirth = newArry[37];
-        fatherName = newArry[39];
-        motherName = newArry[40];
-        NationalId = newArry[26];
-        housnumber = newArry[110] + newArry[111];
-        villageRoad = newArry[66];
-        mahula = newArry[113];
-        postOffice = newArry[67];
-        psotalCode = newArry[116];
-        District = newArry[68];
-        division = newArry[47];
-      }
-      if (newArry[0] == "National ID") {
-        NameInbangla = newArry[34];
-        englishName = newArry[35];
-        dateOfBirth = newArry[36];
-        fatherName = newArry[40];
-        motherName = newArry[41];
-        NationalId = newArry[2];
-        villageRoad = newArry[66];
-        mahula = newArry[111] + newArry[112];
-        postOffice = newArry[67];
-        psotalCode = newArry[124];
-        District = newArry[47];
-        division = newArry[47];
-        housnumber = newArry[118] + newArry[119];
-      }
-
+      dateOfBirth = dateOfBirth.split("-").reverse().join(" ")
+      
       nicwrapper.innerHTML = `  <div class="box-container">
       <div class="nice-box box1">
         <div class="nic-header padding">
-          <div class="nic-logo">
-            <img src="./images/logo.png"  alt="abc" />
-          </div>
-          <div>
-            <p>গণপ্রজাতন্ত্রী বাংলাদেশ সরকার </p>
-            <p class="green">
-              Government of the People's Republic of Bangladesh
-            </p>
-            <p>
-              <span class="red"> National ID Card </span> /  জাতীয় পরিচয় পত্র
-            </p>
-          </div>
+<img src="./images/topheader.PNG" width="100%" alt="">
+  
         </div>
         <div class="nic-body">
 <img src="./images/bg-sign.png" class="bg-img" alt="">
 
 
           <div class="nic-photo">
-            <img src="../pdfimages/img_p0_1.png" alt="abc" />
+            <img src="../pdfimages/img_p0_1.png"  class="man" alt="abc" />
+            <img src="../pdfimages/img_p0_2.png" class="signImg" alt="abc" />
           </div>
           <div class="nic-content">
             <p>নাম: <span class="left-spacing bold">${NameInbangla}</span></p>
@@ -128,28 +155,33 @@ const fileUpload = (e) => {
       </div>
       <div class="nice-box nic-box2">
         <div class="nic-header">
-        <img src="./images/blood.PNG" width="100%" alt="">
+        <img src="./images/topheade2.PNG" width="100%" alt="">
 
         </div>
         <div class="nic-body-2">
           <p>
-  <img   src="./images/house.PNG" alt="">
+  <img  style="margin-top: -5px;" src="./images/house.PNG" alt="">
             
             <span >${housnumber}, ${villageRoad}, ${mahula}, ${postOffice}, ${psotalCode}, ${District}, ${division}</span>
           </p>
           <div class="blood-group-box">
-            
-          <img src="./images/bldgroup.png" class="mt-2" width="100%" alt="">
+            <div class="placepfbirth" >   
+          <img src="./images/bldgroup.png"  width="57%" alt="">
+          <span>positive ,</span>
+          <span style="margin-left: 16px;">${placebirth}</span>
+          </div>
 
             
-            
+            <div>  
+          <img src="./images/date.PNG"  width="100%" alt="">
+          </div>
           </div>
         </div>
         <div class="nic-body-3">
           <img style="margin-top: 5px; margin-left: 5px;" src="./images/sign.jpg" alt="abc" width="80px" />
           <div class="text-box">
           <div>
-    <img src="./images/donor.PNG"  alt="">
+    <img src="./images/donor.PNG"  width="80%" alt="">
     </div>
             
             <p><img width="80px" src="./images/paymentofdate.PNG" alt="">
@@ -164,7 +196,7 @@ const fileUpload = (e) => {
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`;
       const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" ;
-      console.log(barCode);
+      
       PDF417.init(barCode);
       var barcode = PDF417.getBarcodeArray();
 
@@ -174,7 +206,7 @@ const fileUpload = (e) => {
 
       // create canvas element based on number of columns and rows in barcode
       var canvas = document.createElement('canvas');
-      canvas.width = bw * barcode['num_cols'];
+      canvas.width = bw * barcode['num_cols'] ;
       canvas.height = bh * barcode['num_rows'];
       document.getElementById('barcode').appendChild(canvas);
 
@@ -209,3 +241,5 @@ const fileUpload = (e) => {
       console.log(err);
     });
 };
+
+

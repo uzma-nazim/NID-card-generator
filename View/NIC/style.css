@@ -1,7 +1,15 @@
 
 @font-face {
     font-family: bangla;
-    src: url(./font/Bokonique-Light.otf);
+    src: url(./font/Nikosh.ttf);
+}
+span{
+    font-family: bangla !important;
+
+    font-size: 13px !important;
+}
+.placepfbirth{
+    white-space: nowrap;
 }
 *{
     padding: 0px;
@@ -184,10 +192,15 @@ p{
 #hidesubmitbtn{
     display: none;
 }
-
+#barcode{
+    margin-top: 6px;
+    
+    height: 65px;
+    overflow: hidden;
+}
 .nice-box{
     border: 1.5px solid black;
-    width: 489px;
+    width: 457px;
     height:max-content ;    
     position: relative;
     top: 0px ;
@@ -198,7 +211,7 @@ p{
 .nic-box2{
     height:max-content ;    
 
-    width: 452px;
+    width: 430px;
 
 }
 
@@ -206,7 +219,7 @@ p{
     display: flex;
     border-bottom: 1.5px solid black;
     text-align: center;
-
+    justify-content: center;
     padding: 5px;
 }
 .green{
@@ -216,12 +229,23 @@ p{
 .red{
     color: red;
 }
-.nic-photo img{
+.man{
     margin-left: 5px;
     width: 113px;
     
 }
+.signImg{
+    margin-left: 5px;
+    width: 113px;
+    height: 34px;
+    object-fit: fill;
 
+    
+}
+.nic-photo{
+    display: flex;
+    flex-direction: column;
+}
 .left-spacing{
     margin-left: 10px;
 }
@@ -231,11 +255,12 @@ p{
 
 .nic-body{
     display: flex;
+    height: 197px;
     align-items: flex-start;
     gap: 8px;
     /* border: 1px solid red; */
-    padding-top: 10px;
-    padding-bottom: 23px;
+    padding-top: 3px;
+    
     position: relative;
 }
 .bg-img{
@@ -247,9 +272,7 @@ p{
     z-index: -1;
     opacity: 0.3;
 }
-.padding{
-    padding: 10px !important;
-}
+
 .nic-body-2{
 
     padding-left:11px;
@@ -272,10 +295,12 @@ p{
     color: #fff;
 }
 .blood-group-box{
-    
+ display: flex;   
+ justify-content: space-between;
+ width: 100%;
 }
 .nic-body-3{
-    height: 142px;
+    height: 141px;
 
 }
 .text-box{
