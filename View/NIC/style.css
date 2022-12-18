@@ -3,6 +3,11 @@
     font-family: bangla;
     src: url(./font/Nikosh.ttf);
 }
+@font-face {
+    font-family: futura;
+    src: url(./font/futura\ medium\ bt.ttf);
+}
+
 span{
     font-family: bangla !important;
 
@@ -32,7 +37,10 @@ p{
     display: flex;
     padding: 10px 0px;
 }
+.font{
+    font-family: futura !important;
 
+}
 .header1{
     margin-left: 40px;
     display: flex;
@@ -211,7 +219,7 @@ p{
 .nic-box2{
     height:max-content ;    
 
-    width: 430px;
+    width: 497px;
 
 }
 
@@ -255,11 +263,11 @@ p{
 
 .nic-body{
     display: flex;
-    height: 197px;
+    height: 204px;
     align-items: flex-start;
     gap: 8px;
     /* border: 1px solid red; */
-    padding-top: 3px;
+    padding-top: 10px;
     
     position: relative;
 }

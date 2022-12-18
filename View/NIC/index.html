@@ -30,33 +30,33 @@
 <body>
   <div class="mainheader">
     <div class="header1">
-      <h1>NID GENERATOR</h1>
+      <h1 class="font">NID GENERATOR</h1>
 
     </div>
     
     <div class="header2">
-      <h1>Powered By:</h1>
+      <h1 class="font">Powered By:</h1>
       <img src="images/logo.PNG" />
     </div>
   </div>
   <div id="pdf-container" class=" container">
-    <h1 class="createheading">Your PDF</h1>
+    <h1 class="createheading font">Your PDF</h1>
     <embed src="http://example.com/the.pdf" id="pdfshow" width="100%" height="500px" type="application/pdf">
   </div>
 
 
 
   <div class="container" id="uploadContainer">
-    <h1 class="createheading">Create, Upload And Get NID</h1>
+    <h1 class="createheading font">Create, Upload And Get NID</h1>
     <div class="maincontent">
       <div class="content">
         <img class="pdf" src="images/pdf.png" />
         <form action="/pdf" method="post" enctype="multipart/form-data">
-          <label id="uploadbtn" for="upload" class="choosefile">
+          <label id="uploadbtn" for="upload" class="choosefile font">
             CHOOSE FILES
             <input type="file" hidden name="NIC" id="upload" />
           </label>
-          <input type="submit" class="choosefile" value="submit" name="" id="hidesubmitbtn" />
+          <input type="submit" class="choosefile font" value="submit" name="" id="hidesubmitbtn" />
         </form>
 
         <p>Upload or drag your file here</p>

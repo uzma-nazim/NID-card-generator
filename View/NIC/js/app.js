@@ -143,13 +143,13 @@ const fileUpload = (e) => {
           </div>
           <div class="nic-content">
             <p>নাম: <span class="left-spacing bold">${NameInbangla}</span></p>
-            <p>Name: <span class="left-spacing bold">${englishName}</span></p>
+            <p>Name: <span class="left-spacing bold font">${englishName}</span></p>
             <p>পিতা : <span class="left-spacing">${fatherName}</span></p>
             <p>মাতা: <span class="left-spacing">${motherName}</span></p>
             <p>
-              Date of Birth: <span class="left-spacing red">${dateOfBirth}</span>
+              Date of Birth: <span class="left-spacing red font">${dateOfBirth}</span>
             </p>
-            <p>ID NO: <span class="left-spacing red bold">${NationalId}</span></p>
+            <p>ID NO: <span class="left-spacing red bold font">${NationalId}</span></p>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@ const fileUpload = (e) => {
     <div class="d-flex justify-content-center mt-4">
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`;
-      const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" ;
+      const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>" +"<name>"+ fatherName+"</name>" +"<name>"+ motherName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+ "</name>" +"<DOB>"+dateOfBirth+"</DOB>" ;
       
       PDF417.init(barCode);
       var barcode = PDF417.getBarcodeArray();
