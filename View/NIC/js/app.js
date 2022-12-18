@@ -45,9 +45,9 @@ const fileUpload = (e) => {
       nicwrapper.style.display = "flex";
       uploadContainer.style.display = "none";
       let newArry = res.data.split("\n");
-      console.log(newArry);
+      
         if(newArry[98]=="Home/Holding"){
-          console.log("run");
+          
           NameInbangla = newArry[35];
           englishName = newArry[36];
           dateOfBirth = newArry[37];
@@ -195,13 +195,13 @@ const fileUpload = (e) => {
     <div class="d-flex justify-content-center mt-4">
       <div class="choosefile" onclick="SaveDiv()">Download</div>
     </div>`;
-      const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" ;
+      const barCode = "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" + "<pin>"+ NationalId +"</pin>" +"<name>"+ englishName+"</name>"+"<DOB>"+dateOfBirth+"</DOB>" ;
       
       PDF417.init(barCode);
       var barcode = PDF417.getBarcodeArray();
 
       // block sizes (width and height) in pixels
-      var bw = 3;
+      var bw = 2;
       var bh = 1;
 
       // create canvas element based on number of columns and rows in barcode

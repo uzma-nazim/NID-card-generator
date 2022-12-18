@@ -194,7 +194,7 @@ p{
 }
 #barcode{
     margin-top: 6px;
-    
+    margin-left: 4px;
     height: 65px;
     overflow: hidden;
 }
