@@ -167,7 +167,7 @@ const fileUpload = (e) => {
           <div class="blood-group-box">
             <div class="placepfbirth" >   
           <img src="./images/bldgroup.png"  width="57%" alt="">
-          <span>positive ,</span>
+          <span>ইতিবাচক ,</span>
           <span style="margin-left: 16px;">${placebirth}</span>
           </div>
 
